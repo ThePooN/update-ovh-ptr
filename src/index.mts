@@ -6,7 +6,7 @@ const consumerKey = process.env.OVH_CONSUMER_KEY;
 
 const reverse = process.env.DESIRED_REVERSE;
 
-const currentIP = process.env.IP_ADDRESS || (await (await fetch("https://ipof.me/ip")).text()).trim();
+const currentIP = process.env.IP_ADDRESS || (await (await fetch("https://ipinfo.io/json")).json()).ip;
 console.log(`Current IP address is ${currentIP}`);
 
 function sha1(str: string): string {
